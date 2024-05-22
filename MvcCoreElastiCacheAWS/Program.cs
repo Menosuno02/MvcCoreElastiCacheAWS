@@ -8,6 +8,13 @@ builder.Services.AddTransient<RepositoryCoches>();
 builder.Services.AddTransient<ServiceAWSCache>();
 builder.Services.AddControllersWithViews();
 
+string connectionString = builder.Configuration.GetConnectionString("CacheRedis");
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = connectionString;
+    options.InstanceName = "cache-coches"; // NOMBRE DEL CACHE REDIS
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
