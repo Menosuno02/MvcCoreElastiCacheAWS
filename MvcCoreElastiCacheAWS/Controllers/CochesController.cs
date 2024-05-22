@@ -33,7 +33,7 @@ namespace MvcCoreElastiCacheAWS.Controllers
         public async Task<IActionResult> DeleteFavorito(int idcoche)
         {
             await this.service.DeleteCocheFavoritoAsync(idcoche);
-            return RedirectToAction("Index");
+            return RedirectToAction("Favoritos");
         }
 
         public IActionResult Index()
