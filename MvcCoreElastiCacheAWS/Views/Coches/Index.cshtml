@@ -38,9 +38,17 @@
                     <img src="@item.Imagen" width="200" height="150" />
                 </td>
                 <td>
-                    <a asp-controller="Coches" asp-action="Details"
-                       asp-route-id="@item.IdCoche" class="btn btn-sm btn-primary">
+                    <a asp-controller="Coches"
+                       asp-action="Details"
+                       asp-route-id="@item.IdCoche"
+                       class="btn btn-sm btn-primary">
                         Details
+                    </a>
+                    <a asp-controller="Coches"
+                       asp-action="SeleccionarFavorito"
+                       asp-route-idcoche="@item.IdCoche"
+                       class="btn btn-success btn-sm">
+                        Seleccionar favorito
                     </a>
                 </td>
             </tr>
